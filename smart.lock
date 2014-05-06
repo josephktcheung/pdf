@@ -4,7 +4,11 @@
     "basePackages": {
       "iron-router": {},
       "blaze-layout": {},
-      "bootstrap-3": {}
+      "bootstrap-3": {},
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/pahans/meteor-accounts-ui-bootstrap-3.git",
+        "branch": "master"
+      }
     },
     "packages": {
       "iron-router": {
@@ -21,6 +25,11 @@
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
         "tag": "v3.1.1-1",
         "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/pahans/meteor-accounts-ui-bootstrap-3.git",
+        "branch": "master",
+        "commit": "d354cb7bb9351c60999d288c4d0c5c8fe6c8be3f"
       }
     }
   }
