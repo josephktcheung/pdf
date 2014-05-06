@@ -8,3 +8,5 @@ iron-router
 browser-policy
 bootstrap-3
 coffeescript
+accounts-ui-bootstrap-3
+accounts-password
