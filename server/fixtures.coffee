@@ -3,17 +3,17 @@ if Recommendations.find().count() == 0
   julId = Meteor.users.insert
     profile: { name: 'Julie'}
 
-  jul = Meteor.users.findOne(julId);
+  jul = Meteor.users.findOne(julId)
 
   josId = Meteor.users.insert
     profile: { name: 'Joseph'}
 
-  jos = Meteor.users.findOne(josId);
+  jos = Meteor.users.findOne(josId)
 
   marId = Meteor.users.insert({
     profile: { name: 'Marco'}
 
-  mar = Meteor.users.findOne(marId);
+  mar = Meteor.users.findOne(marId)
 
   centralId = Locations.insert
     name: 'Central'
