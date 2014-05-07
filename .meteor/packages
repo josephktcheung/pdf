@@ -10,3 +10,5 @@ bootstrap-3
 coffeescript
 accounts-ui-bootstrap-3
 accounts-password
+service-configuration
+accounts-facebook
