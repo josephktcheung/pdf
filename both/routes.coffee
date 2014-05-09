@@ -5,27 +5,12 @@ Router.configure
     Meteor.subscribe 'dinners'
     Meteor.subscribe 'flowers'
 
-RecommendationsListController = RouteController.extend(
-  template: "recommendationsList"
-  increment: 1
-  limit: ->
-    parseInt(@params.recommendationsLimit) or @increment
-
-  findOptions: ->
-    limit: @limit()
-
-  waitOn: ->
-    Meteor.subscribe "recommendations", @findOptions()
-
-  data: ->
-    recommendations: Recommendations.find({}, @findOptions())
-)
-
 Router.map ->
   @.route 'main', { path: '/' }
-  # @.route 'recommendationsList',
-  #   path: '/recommendations/:recommendationsLimit?'
-  #   controller: RecommendationsListController
+  @.route 'recommendationsList',
+    path: '/recommendations'
+    waitOn: ->
+      Meteor.subscribe 'recommendations'
   @.route 'recommendationPage',
     path: '/recommendations/:_id'
     waitOn: ->
