@@ -23,6 +23,13 @@ RecommendationsListController = RouteController.extend(
 
 Router.map ->
   @.route 'main', { path: '/' }
-  @.route 'recommendationsList',
-    path: '/recommendations/:recommendationsLimit?'
-    controller: RecommendationsListController
+  # @.route 'recommendationsList',
+  #   path: '/recommendations/:recommendationsLimit?'
+  #   controller: RecommendationsListController
+  @.route 'recommendationPage',
+    path: '/recommendations/:_id'
+    waitOn: ->
+      Meteor.subscribe("singleRecommendation", @params._id)
+
+    data: ->
+      Recommendations.findOne @params._id

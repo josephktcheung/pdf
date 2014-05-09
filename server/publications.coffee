@@ -1,6 +1,9 @@
 Meteor.publish "recommendations", (options) ->
   Recommendations.find({}, options)
 
+Meteor.publish "singleRecommendation", (id) ->
+  id and Recommendations.find(id)
+
 Meteor.publish "presents", ->
   Presents.find()
 
