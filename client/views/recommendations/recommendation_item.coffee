@@ -6,3 +6,14 @@ Template.recommendationItem.helpers
     Dinners.find(@dinnerId).fetch()[0]
   flower: ->
     Flowers.find(@flowerId).fetch()[0]
+
+Template.recommendationItem.events
+  'click .activeuser': (e) ->
+    e.preventDefault()
+
+    Recommendations.find().fetch()[0]
+    recId = @._id
+    console.log recId
+
+
+
