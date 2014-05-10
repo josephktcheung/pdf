@@ -5,7 +5,8 @@ Template.flower.events
     Flowers.find().fetch()[0]
     flowerId= @_id
 
-    recommendationId = Recommendations.find().fetch()[0]
+    n = Pages.currentPage()
+    recommendationId = Pages.PaginatedCollection.find().fetch()[n - 1]
 
     Recommendations.update {_id: recommendationId._id}, {$set: {"flowerId": flowerId}}, (error) ->
       if error

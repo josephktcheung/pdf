@@ -1,7 +1,5 @@
 Template.recommendationsList.helpers
 
-
-
   presents: ->
     Presents.find recommendationId: @_id
 
@@ -20,7 +18,5 @@ Template.recommendationsList.helpers
   allFlowers: ->
     Flowers.find()
 
-Template.recommendations.helpers
 
-  recommendations: ->
-    Recommendations.find()
+
