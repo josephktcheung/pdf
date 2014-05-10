@@ -15,5 +15,14 @@ Template.recommendationItem.events
     recId = @._id
     console.log recId
 
+  'click .nextuser': (e) ->
+    e.preventDefault()
+
+  'click .previoususer': (e) ->
+    e.preventDefault()
+
+
+
+
 
 
