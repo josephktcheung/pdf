@@ -16,4 +16,4 @@
 //BrowserPolicy.content.disallowEval(); // default
 //BrowserPolicy.content.allowInlineStyles() // default
 //BrowserPolicy.content.disallowInlineStyles();
-
+BrowserPolicy.content.allowImageOrigin("https://fbcdn-profile-a.akamaihd.net");

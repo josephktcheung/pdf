@@ -4,6 +4,9 @@
       <label class="control-label" for="location">Location</label>
       <div class="controls">
         <select id="selectLocation" name="location">
+          {{#each locations}}
+            <option>{{name}}</option>
+          {{/each}}
         </select>
       </div>
 <!--       <div class="controls">

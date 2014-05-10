@@ -1,13 +1,11 @@
 Accounts.onCreateUser (options, user) ->
   if options.profile
-    options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large"
     user.profile = options.profile
+    Meteor.call 'getUserProfilePicture', user, (error, result) ->
+      user.profile.picture = result.data.url
     user
 
-ServiceConfiguration.configurations.remove
-  service: 'facebook'
-
-ServiceConfiguration.configurations.insert
-  service: 'facebook'
-  appId: Meteor.settings.facebook.appId
-  secret: Meteor.settings.facebook.secret
+Accounts.onLogin (data) ->
+  Meteor.call 'updateFriendsList', data.user, (error, result) ->
+    console.log 'result: ', result
+    Meteor.users.update data.user._id, $set: { "profile.friendList": result }

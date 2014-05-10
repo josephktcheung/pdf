@@ -1,3 +1,86 @@
+if Locations.find().count() is 0
+  Locations.insert
+    "name": "Central",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Mid-level",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "The Peak",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Sai Wan",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Sheung Wan",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Causeway Bay",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Chai Wan",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "North Point",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Quarry Bay",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Sai Wan Ho",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Shau Kei Wan",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Siu Sai Wan",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Aberdeen",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Ap Lei Chau",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Chung Hom Kok",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Cyberport",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Chung Hom Kok",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Deep Water Bay",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Pok Fu Lam",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Repulse Bay",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Stanley",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Shek O",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Tai Tam",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Wong Chuk Hang",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Wan Chai",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Happy Valley",
+    "area": "Hong Kong Island"
+  Locations.insert
+    "name": "Tai Hang",
+    "area": "Hong Kong Island"
+
 if Recommendations.find().count() is 0
 
   wineId = Presents.insert
