@@ -7,6 +7,7 @@
       "git": "https://github.com/pahans/meteor-accounts-ui-bootstrap-3.git"
     },
     "scss": {},
-    "autocomplete": {}
+    "autocomplete": {},
+    "npm": {}
   }
 }
