@@ -1,5 +1,5 @@
-Meteor.publish "recommendations", ->
-  Recommendations.find()
+Meteor.publish "recommendations", (options) ->
+  Recommendations.find({}, options)
 
 Meteor.publish "presents", ->
   Presents.find()

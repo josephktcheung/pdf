@@ -5,7 +5,8 @@ Template.present.events
     Presents.find().fetch()[0]
     presentId= @_id
 
-    recommendationId = Recommendations.find().fetch()[0]
+    n = Pages.currentPage()
+    recommendationId = Pages.PaginatedCollection.find().fetch()[n - 1]
 
     Recommendations.update {_id: recommendationId._id}, {$set: {"presentId": presentId}}, (error) ->
       if error

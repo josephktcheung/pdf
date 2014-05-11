@@ -10,4 +10,5 @@ Router.configure
 
 Router.map ->
   @.route 'main', { path: '/' }
-  @.route 'recommendationsList', { path: '/recommendations' }
+  @.route 'recommendationsList',
+    path: '/recommendations'

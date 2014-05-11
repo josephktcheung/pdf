@@ -1,9 +1,7 @@
 <template name="recommendationsList">
   <h1>Recommendations for each user</h1>
   <div>
-    {{#each recommendations}}
-      {{> recommendationItem}}
-    {{/each}}
+    {{> recommendations}}
   </div>
 
   <h1>List of all presents</h1>
@@ -26,4 +24,16 @@
       {{> flower}}
     {{/each}}
   </div>
+</template>
+
+<template name="recommendations">
+  {{> pagesNav}}
+  {{> pages}}
+</template>
+
+<template name="_pagesItemDefault">
+  <h3>{{name}}</h3>
+  <p>{{present.title}}</p>
+  <p>{{dinner.title}}</p>
+  <p>{{flower.title}}</p>
 </template>
