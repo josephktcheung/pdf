@@ -5,9 +5,10 @@ Template.dinner.events
     Dinners.find().fetch()[0]
     dinnerId= @_id
 
-    recommendationId = Recommendations.find().fetch()[0]
+    recommendationId = Session.get('targetUser')
+    currentRecommendation = Recommendations.findOne {targetId: recommendationId}
 
-    Recommendations.update {_id: recommendationId._id}, {$set: {"dinnerId": dinnerId}}, (error) ->
+    Recommendations.update currentRecommendation._id, {$set: {"dinnerId": dinnerId}}, (error) ->
       if error
         console.log 'Error!'
         alert(error.reason)

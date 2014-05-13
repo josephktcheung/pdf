@@ -1,5 +1,109 @@
 @import 'components';
-
 @import 'pages';
+@import 'recommendationsindex';
 
+
+$bgDefault      : #478bda;
+$bgHighlight    : #eb5366;
+$colDefault     : #ffffff;
+$colHighlight   : #030711;
+$red            : #EB5265;
+
+#main {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+// h1, h2, h3, h4, h5, h6, p {
+// }
+
+h1 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 12px;
+  margin: 0;
+  color: gray;
+}
+
+.left-margin {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.blue-font {
+  color: $bgDefault;
+}
+
+.red-font {
+  color: $red;
+  font-weight: bold;
+}
+// Color for navbar in header
+
+.navbar {
+  margin-bottom: 10px;
+}
+
+.navbar-default {
+  background-color: $bgDefault;
+  border: none;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse {
+    background-color: $red;
+  }
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+#login-buttons-facebook {
+  background: transparent;
+  border-color: white;
+  width: 100%;
+}
 #spinner { height: 300px }
+
+// For friends autocomplete
+.form-control {
+  border-color: $bgDefault;
+  height: 44px;
+}

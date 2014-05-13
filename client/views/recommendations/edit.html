@@ -1,21 +1,81 @@
 <template name="editRecommendation">
-  {{#if showPrevNext}}
-    <a href="#" id="prev">Previous</a>
-  {{/if}}
-  <img src="{{targetUser.profile.picture}}" alt="">
-  {{targetUser.profile.name}}
-  <form class="form-group">
-    <label for="location" class="sr-only">Location</label>
-    <select name="location" id="location">
-      <option value="">Select location</option>
-      {{#each locations}}
-        {{> location}}
+
+  <div class="left-margin">
+    <p>
+      {{#if showPrevNext}}
+        <a href="#" class="glyphicon glyphicon-chevron-left" id="prev"></a>
+      {{/if}}
+      <img src="{{targetUser.profile.picture}}" alt="" class="target-profile-edit img-circle">
+      <span class="target-name">{{targetUser.profile.name}}</span>
+      <span>
+        <form class="form-group">
+          <label for="location" class="sr-only">Location</label>
+          <select name="location" id="location">
+            <option value="">Select location</option>
+            {{#each locations}}
+              {{> location}}
+            {{/each}}
+          </select>
+        </form>
+      </span>
+      {{#if showPrevNext}}
+        <a href="#" class="glyphicon glyphicon-chevron-right" id="next"></a>
+      {{/if}}
+    </p>
+  </div>
+
+  <div class="left-margin">
+    <h1 class="chosen">Chosen</h1>
+    <div class= "chosen-row">
+
+      <div class="chosen-item-1">
+        <img src="{{chosenPresent.image}}" alt="{{chosenPresent.title}}" class="imagelist">
+        <div>
+          <p>
+            <span class="chosen-title">{{chosenPresent.title}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="chosen-item-2">
+        <img src="{{chosenDinner.image}}" alt="{{chosenDinner.title}}" class="imagelist">
+        <div>
+          <p>
+            <span class="chosen-title">{{chosenDinner.title}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="chosen-item-2">
+        <img src="{{chosenFlower.image}}" alt="{{chosenFlower.title}}" class="imagelist">
+        <div>
+          <p>
+            <span class="chosen-title">{{chosenFlower.title}}</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+      {{#each allPresents}}
+        {{> present}}
       {{/each}}
-    </select>
-  </form>
-  {{#if showPrevNext}}
-    <a href="#" id="next">Next</a>
-  {{/if}}
+  </div>
+
+  <div>
+    {{#each allDinners}}
+      {{> dinner}}
+    {{/each}}
+  </div>
+
+  <div>
+    {{#each allFlowers}}
+      {{> flower}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="location">

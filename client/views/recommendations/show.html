@@ -2,8 +2,11 @@
   <li>
     <div class="activeuser">
       <a href="{{pathFor 'editRecommendation'}}">
-        <img src="{{target.profile.picture}}" alt="">
-        <p>{{target.profile.name}}</p>
+        <h2>
+          <img src="{{target.profile.picture}}" alt="" class="target-profile img-circle">
+          <span class="target-name">{{target.profile.name}}</span>
+          <span class="glyphicon glyphicon-remove"></span>
+        </h2>
       </a>
     </div>
   </li>

@@ -83,78 +83,96 @@ if Locations.find().count() is 0
 
 if Presents.find().count() is 0
 
-  wineId = Presents.insert
+  Presents.insert
     location: 'Central'
     title: 'Wine'
     description: 'Cabernet Sauvignon'
     price: 'HKD 400'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/wine1.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/winelogo.jpg'
 
-  chocoId = Presents.insert
+  Presents.insert
     location: 'Admiralty'
     title: 'Chocolate'
     description: 'Aguis Chocolate'
     price: 'HKD 400'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/choco2.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/chocologo.png'
 
-  ringId = Presents.insert
+  Presents.insert
     location: 'Cyberport'
     title: 'Ring'
     description: 'Ring Mabelle'
     price: 'HKD 1400'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/ring3.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/ring+logo.jpg'
 
 if Dinners.find().count() is 0
 
-  delaneyId = Dinners.insert
-    locationId: 'Central'
+  Dinners.insert
+    location: 'Central'
     title: 'Delaney Restaurant'
     description: 'Romantic dinner'
     price: 'HKD 600'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner1.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner1+logo.png'
 
-  pizzaId = Dinners.insert
-    locationId: 'Admiralty'
+  Dinners.insert
+    location: 'Admiralty'
     title: 'Paisano Pizza'
     description: 'Huge pizza'
     price: 'HKD 200'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner2.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner2+logo.png'
 
-  globeId = Dinners.insert
-    locationId: 'Cyberport'
+  Dinners.insert
+    location: 'Cyberport'
     title: 'The Globe'
     description: 'Romantic Bar for two'
     price: 'HKD 1200'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner3.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/dinner3+logo.png'
 
 if Flowers.find().count() is 0
 
-  roseId = Flowers.insert
-    locationId: 'Central'
+  Flowers.insert
+    location: 'Central'
     title: 'Rose'
     description: 'Red color'
     price: 'HKD 300'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower1.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower1+logo.png'
 
-  bouId = Flowers.insert
-    locationId: 'Admiralty'
+ Flowers.insert
+    location: 'Admiralty'
     title: 'Bouvardia'
     description: 'Smell like sweet perfume'
     price: 'HKD 700'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower2.jpeg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower2+logo.png'
 
-  lavId = Flowers.insert
-    locationId: 'Cyberport'
+ Flowers.insert
+    location: 'Cyberport'
     title: 'Lavendar'
     description: 'Twilight mixed flower'
     price: 'HKD 500'
     vendor: 'Vendor'
     phonenumber: '1278 7897'
+    image: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower3.jpg'
+    vendorimage: 'https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/flower3+logo.png'

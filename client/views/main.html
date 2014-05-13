@@ -1,4 +1,7 @@
 <template name="main">
-  {{> inputAutocomplete settings=settings class="form-control" placeholder="input friend names"}}
-  {{> recommendations }}
+  <div class="left-margin">
+    <h1 class="blue-font">Add the people you care about</h1>
+    {{> inputAutocomplete settings=settings class="form-control" placeholder="Type name here"}}
+  </div>
+    {{> recommendations }}
 </template>

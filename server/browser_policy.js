@@ -17,3 +17,5 @@
 //BrowserPolicy.content.allowInlineStyles() // default
 //BrowserPolicy.content.disallowInlineStyles();
 BrowserPolicy.content.allowImageOrigin("https://fbcdn-profile-a.akamaihd.net");
+BrowserPolicy.content.allowImageOrigin('*.amazonaws.com');
+BrowserPolicy.content.allowImageOrigin('*.s3.amazonaws.com');

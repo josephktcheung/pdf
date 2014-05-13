@@ -17,6 +17,33 @@ Template.editRecommendation.helpers
   locations: ->
     Locations.find()
 
+  recommendations: ->
+    Recommendations.find()
+
+  chosenPresent: ->
+    targetUser = Session.get 'targetUser'
+    recommendations = Recommendations.findOne targetId: targetUser
+    Presents.findOne recommendations.presentId
+
+  chosenDinner: ->
+    targetUser = Session.get 'targetUser'
+    recommendations = Recommendations.findOne targetId: targetUser
+    Dinners.findOne recommendations.dinnerId
+
+  chosenFlower: ->
+    targetUser = Session.get 'targetUser'
+    recommendations = Recommendations.findOne targetId: targetUser
+    Flowers.findOne recommendations.flowerId
+
+  allPresents: ->
+    Presents.find()
+
+  allDinners: ->
+    Dinners.find()
+
+  allFlowers: ->
+    Flowers.find()
+
   showPrevNext: ->
     if Recommendations.find().count() < 2
       false

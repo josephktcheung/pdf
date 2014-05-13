@@ -1,0 +1,115 @@
+$bgDefault      : #478bda;
+$red            : #EB5265;
+
+.activeuser {
+  h2 {
+    font-size: 16px;
+    margin: 2%;
+    color: $red;
+  }
+    .target-name {
+      margin-left: 10%;
+    }
+    .glyphicon-remove {
+      text-shadow: 0 1px 0 #ffffff;
+      margin-top: 6%;
+      margin-right: 5%;
+      opacity: 0.4;
+      float: right;
+}}
+
+.target-profile {
+  width: 3em;
+  height: 3em;
+}
+
+.recommendation-item {
+  float: left;
+  margin: 2%;
+  width: 46%;
+  height: 46%;
+  .imagelist {
+    width: 100%;
+    margin-bottom: 2%;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }}
+
+.recommendation-title {
+  font-weight: bold;
+  color: $bgDefault;
+}
+
+.vendorlist {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.price {
+  float: right;
+}
+
+.location {
+  float: right;
+}
+
+.recommendation-info {
+  max-height: 40px;
+  overflow: hidden;
+}
+
+// Recommendation edit
+.target-profile-edit {
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.target-name {
+  font-size: 16px;
+  margin: 2%;
+  color: $red;
+  margin-left: 10%;
+}
+
+.glyphicon-chevron-left {
+  color: gray;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.4;
+}
+
+.glyphicon-chevron-right {
+  color: gray;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.4;
+  float: right;
+  padding-top: 3.5%;
+}
+
+.chosen-item-1 {
+  float: left;
+  width: 30%;
+  height: 30%;
+}
+
+.chosen-item-2 {
+  float: left;
+  width: 30%;
+  height: 30%;
+  margin-left: 5%;
+}
+
+.imagelist {
+  width: 100%;
+  margin-bottom: 2%;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.chosen-title {
+  font-weight: bold;
+  color: $bgDefault;
+}
+
+.chosen {
+  text-align: center;
+}

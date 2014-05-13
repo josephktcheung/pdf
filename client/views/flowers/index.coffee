@@ -5,9 +5,10 @@ Template.flower.events
     Flowers.find().fetch()[0]
     flowerId= @_id
 
-    recommendationId = Recommendations.find().fetch()[0]
+    recommendationId = Session.get('targetUser')
+    currentRecommendation = Recommendations.findOne {targetId: recommendationId}
 
-    Recommendations.update {_id: recommendationId._id}, {$set: {"flowerId": flowerId}}, (error) ->
+    Recommendations.update currentRecommendation._id, {$set: {"flowerId": flowerId}}, (error) ->
       if error
         console.log 'Error!'
         alert(error.reason)

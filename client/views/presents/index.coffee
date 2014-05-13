@@ -5,9 +5,10 @@ Template.present.events
     Presents.find().fetch()[0]
     presentId= @_id
 
-    recommendationId = Recommendations.find().fetch()[0]
+    recommendationId = Session.get('targetUser')
+    currentRecommendation = Recommendations.findOne {targetId: recommendationId}
 
-    Recommendations.update {_id: recommendationId._id}, {$set: {"presentId": presentId}}, (error) ->
+    Recommendations.update currentRecommendation._id, {$set: {"presentId": presentId}}, (error) ->
       if error
         console.log 'Error!'
         alert(error.reason)
