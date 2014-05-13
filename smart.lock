@@ -11,6 +11,7 @@
       },
       "scss": {},
       "autocomplete": {},
+      "npm": {},
       "spin": {}
     },
     "packages": {
@@ -43,6 +44,11 @@
         "git": "https://github.com/mizzao/meteor-autocomplete.git",
         "tag": "v0.4.3",
         "commit": "a70bd9b6b9f5576a0fa96a7a3440b1a7d83e4a32"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",

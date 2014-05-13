@@ -1,3 +1,14 @@
+translateLocationId = (locationId) ->
+  locations = Locations.find().fetch()
+  location = (_.findWhere locations, {_id: locationId}).name
+
+findRecommendation = (recommendationId, location) ->
+  dinner = Dinners.findOne {location: location}
+  flower = Flowers.findOne {location: location}
+  present = Presents.findOne {location: location}
+
+  Recommendations.update _id: recommendationId, {$set: { dinnerId: dinner._id, flowerId: flower._id, presentId: present._id }}
+
 Template.editRecommendation.rendered = ->
   targetUser = Session.get 'targetUser'
   if targetUser
@@ -22,6 +33,30 @@ Template.editRecommendation.helpers
       false
     else
       true
+
+  dinner: ->
+    recommendation = Recommendations.findOne {targetId: Session.get 'targetUser'}
+    if recommendation
+      if recommendation.dinnerId
+        dinner = Dinners.findOne(recommendation.dinnerId).title
+      else
+        'No dinner'
+
+  flower: ->
+    recommendation = Recommendations.findOne {targetId: Session.get 'targetUser'}
+    if recommendation
+      if recommendation.flowerId
+        flower = Flowers.findOne(recommendation.flowerId).title
+      else
+        'No flower'
+
+  present: ->
+    recommendation = Recommendations.findOne {targetId: Session.get 'targetUser'}
+    if recommendation
+      if recommendation.presentId
+        present = Presents.findOne(recommendation.presentId).title
+      else
+        'No present'
 
 Template.location.helpers
   selected: ->
@@ -54,3 +89,9 @@ Template.editRecommendation.events
     Recommendations.update _id: recommendationId, {$set: {locationId: $(e.target).val()}}, (error, result) ->
       if error
         console.log 'error: ', error
+
+    locationId = Recommendations.findOne({targetId: Session.get 'targetUser'}).locationId
+    location = translateLocationId locationId
+
+    findRecommendation recommendationId, location
+
