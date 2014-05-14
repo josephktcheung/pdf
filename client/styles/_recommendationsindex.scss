@@ -24,10 +24,8 @@ $red            : #EB5265;
 }
 
 .recommendation-item {
-  float: left;
-  margin: 2%;
-  width: 46%;
-  height: 46%;
+  margin-bottom: 10%;
+  width: 100%;
   .imagelist {
     width: 100%;
     margin-bottom: 2%;
@@ -85,17 +83,9 @@ $red            : #EB5265;
   padding-top: 3.5%;
 }
 
-.chosen-item-1 {
-  float: left;
-  width: 30%;
-  height: 30%;
-}
-
-.chosen-item-2 {
-  float: left;
-  width: 30%;
-  height: 30%;
-  margin-left: 5%;
+.chosen-item {
+  width: 100%;
+  margin-bottom: 10%;
 }
 
 .imagelist {

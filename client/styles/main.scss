@@ -12,10 +12,8 @@ $red            : #EB5265;
 #main {
   padding-right: 8px;
   padding-left: 8px;
+  max-width: 960px;
 }
-
-// h1, h2, h3, h4, h5, h6, p {
-// }
 
 h1 {
   font-size: 16px;
@@ -44,6 +42,7 @@ p {
 
 .navbar {
   margin-bottom: 10px;
+  border-radius: 0;
 }
 
 .navbar-default {
@@ -74,6 +73,9 @@ p {
       background-color: $bgHighlight; }
     .icon-bar {
       background-color: $colDefault; }}
+  .navbar-collapse {
+    // background-color: $red;
+  }
   .navbar-form {
     border-color: $colDefault; }
   .navbar-link {
@@ -92,6 +94,11 @@ p {
         background-color: $bgHighlight; }}}
 }
 
+#login-buttons-facebook {
+  border-color: white;
+  width: 100%;
+}
+>>>>>>> Stashed changes
 #spinner { height: 300px }
 
 // For friends autocomplete

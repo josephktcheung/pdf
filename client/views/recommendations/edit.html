@@ -28,52 +28,59 @@
     <h1 class="chosen">Chosen</h1>
     <div class= "chosen-row">
 
-      <div class="chosen-item-1">
-        <img src="{{chosenPresent.image}}" alt="{{chosenPresent.title}}" class="imagelist">
-        <div>
-          <p>
-            <span class="chosen-title">{{chosenPresent.title}}</span>
-          </p>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="chosen-item">
+          <img src="{{chosenPresent.image}}" alt="{{chosenPresent.title}}" class="imagelist">
+          <div>
+            <p>
+              <span class="chosen-title">{{chosenPresent.title}}</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="chosen-item-2">
-        <img src="{{chosenDinner.image}}" alt="{{chosenDinner.title}}" class="imagelist">
-        <div>
-          <p>
-            <span class="chosen-title">{{chosenDinner.title}}</span>
-          </p>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="chosen-item">
+          <img src="{{chosenDinner.image}}" alt="{{chosenDinner.title}}" class="imagelist">
+          <div>
+            <p>
+              <span class="chosen-title">{{chosenDinner.title}}</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="chosen-item-2">
-        <img src="{{chosenFlower.image}}" alt="{{chosenFlower.title}}" class="imagelist">
-        <div>
-          <p>
-            <span class="chosen-title">{{chosenFlower.title}}</span>
-          </p>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="chosen-item">
+          <img src="{{chosenFlower.image}}" alt="{{chosenFlower.title}}" class="imagelist">
+          <div>
+            <p>
+              <span class="chosen-title">{{chosenFlower.title}}</span>
+            </p>
+          </div>
         </div>
       </div>
 
     </div>
-
   </div>
   <div>
-    {{#each allPresents}}
-      {{> present}}
-    {{/each}}
-  </div>
+    <div>
+      {{#each allPresents}}
+        {{> present}}
+      {{/each}}
+    </div>
 
-  <div>
-    {{#each allDinners}}
-      {{> dinner}}
-    {{/each}}
-  </div>
+    <div>
+      {{#each allDinners}}
+        {{> dinner}}
+      {{/each}}
+    </div>
 
-  <div>
-    {{#each allFlowers}}
-      {{> flower}}
-    {{/each}}
+    <div>
+      {{#each allFlowers}}
+        {{> flower}}
+      {{/each}}
+    </div>
   </div>
 </template>
 
