@@ -111,6 +111,11 @@ Template.editRecommendation.events
       Session.set 'currentIndex', currentIndex - 1
     Session.set 'targetUser', Recommendations.find().fetch()[Session.get 'currentIndex'].targetId
 
+  'click .recommendation-item': (e) ->
+    e.preventDefault()
+    unless $(e.target).context.nodeName == 'BUTTON' or $(e.target).context.parentNode.nodeName == 'BUTTON'
+      $("##{@_id}").modal 'show'
+
   'click #next': (e) ->
     currentIndex = Session.get 'currentIndex'
     recommendationsLength = Recommendations.find().count()
