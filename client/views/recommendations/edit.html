@@ -1,12 +1,9 @@
 <template name="editRecommendation">
-
+  {{> alerts}}
   <div class="left-margin">
     <div>
       {{#if showPrevNext}}
         <span class="arrow"><a href="#" class="glyphicon glyphicon-chevron-right pull-right" id="next"></a></span>
-      {{/if}}
-
-      {{#if showPrevNext}}
         <span class="arrow"><a href="#" class="glyphicon glyphicon-chevron-left pull-left" id="prev"></a></span>
       {{/if}}
 
@@ -77,7 +74,7 @@
         <li><a href="#anythings" data-toggle="tab">Anything else</a></li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane fade in active" id="presents">
+        <div class="tab-pane fade in active row" id="presents">
           {{#each allPresents}}
             {{> showPresent}}
           {{/each}}
@@ -95,6 +92,15 @@
           {{/each}}
         </div>
       </div>
+      {{#each allPresents}}
+        {{> presentModal}}
+      {{/each}}
+      {{#each allDinners}}
+        {{> dinnerModal}}
+      {{/each}}
+      {{#each allAnythings}}
+        {{> anythingModal}}
+      {{/each}}
     </div>
   </div>
 </template>

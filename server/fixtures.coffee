@@ -214,7 +214,8 @@ if Presents.find().count() is 0
   Presents.insert _.extend presents.disneylandTickets,  location: saiWanHoId
   Presents.insert _.extend presents.oceanParkTickets,   location: shauKeiWanId
   Presents.insert _.extend presents.lvBag,              location: shauKeiWanId
-
+  Presents.insert _.extend presents.disneylandTickets,  location: sheungWanId
+  Presents.insert _.extend presents.oceanParkTickets,   location: sheungWanId
 if Dinners.find().count() is 0
 
   Dinners.insert

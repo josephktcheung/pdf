@@ -1,21 +1,36 @@
-Template.showDinner.helpers
+Template.dinnerModal.helpers
   location: ->
     Locations.findOne(@location).name
 
 Template.showDinner.events
-  'click .dinnerList': (e) ->
-    e.preventDefault()
-
-    Dinners.findOne()
-    dinnerId= @_id
-
+  'click .add-dinner': (e) ->
+    console.log 'e.target', $(e.target)
     recommendationId = Session.get('targetUser')
     currentRecommendation = Recommendations.findOne {targetId: recommendationId}
-
-    Recommendations.update currentRecommendation._id, {$set: {"dinnerId": dinnerId}}, (error) ->
+    Recommendations.update currentRecommendation._id, {$set: {"dinnerId": @_id}}, (error) ->
       if error
         console.log 'Error!'
         alert(error.reason)
-
       else
-        alert 'Dinner updated!'
+        $("#alert-dinner").modal 'show'
+        Meteor.setTimeout ->
+          $("#alert-dinner").modal 'hide'
+        , 1000
+
+Template.dinnerModal.events
+  'click .add-dinner-modal': (e) ->
+    console.log 'e.target', $(e.target)
+    dinnerId = @_id
+    recommendationId = Session.get('targetUser')
+    currentRecommendation = Recommendations.findOne {targetId: recommendationId}
+    Recommendations.update currentRecommendation._id, {$set: {"dinnerId": @_id}}, (error) ->
+      if error
+        console.log 'Error!'
+        alert(error.reason)
+      else
+        console.log 'dinnerId', dinnerId
+        $("##{dinnerId}").modal 'hide'
+        $("#alert-dinner").modal 'show'
+        Meteor.setTimeout ->
+          $("#alert-dinner").modal 'hide'
+        , 1000

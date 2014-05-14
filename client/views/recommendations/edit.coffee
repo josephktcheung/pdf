@@ -1,3 +1,17 @@
+loadIsotopes = (ids) ->
+  _.each ids, (id) ->
+    $(id).imagesLoaded ->
+      $(id).isotope
+        itemSelector: '.recommendation-item'
+
+destroyIsotopes = (ids) ->
+  _.each ids, (id) ->
+    $(id).isotope 'destroy'
+
+resetIsotopes = (ids) ->
+  destroyIsotopes(ids)
+  loadIsotopes(ids)
+
 currentRecommendation = ->
   targetUser = Session.get 'targetUser'
   Recommendations.findOne targetId: targetUser
@@ -26,6 +40,11 @@ Template.editRecommendation.rendered = ->
   else
     Session.set 'currentIndex', 0
     Session.set 'targetUser', Recommendations.findOne().targetId
+
+  loadIsotopes(['#presents', '#dinners', '#anythings'])
+
+  $('a[data-toggle="tab"]').on 'shown.bs.tab', (e) ->
+    loadIsotopes(['#presents', '#dinners', '#anythings'])
 
 Template.editRecommendation.helpers
 
@@ -110,6 +129,12 @@ Template.editRecommendation.events
     else
       Session.set 'currentIndex', currentIndex - 1
     Session.set 'targetUser', Recommendations.find().fetch()[Session.get 'currentIndex'].targetId
+    resetIsotopes ['#presents', '#dinners', '#anythings']
+
+  'click .recommendation-item': (e) ->
+    e.preventDefault()
+    unless $(e.target).context.nodeName == 'BUTTON' or $(e.target).context.parentNode.nodeName == 'BUTTON'
+      $("##{@_id}").modal 'show'
 
   'click #next': (e) ->
     currentIndex = Session.get 'currentIndex'
@@ -119,6 +144,7 @@ Template.editRecommendation.events
     else
       Session.set 'currentIndex', currentIndex + 1
     Session.set 'targetUser', Recommendations.find().fetch()[Session.get 'currentIndex'].targetId
+    resetIsotopes ['#presents', '#dinners', '#anythings']
 
   'change #location': (e) ->
     recommendationId = currentRecommendation()._id
@@ -127,5 +153,6 @@ Template.editRecommendation.events
         console.log 'error: ', error
 
     locationId = Recommendations.findOne({targetId: Session.get 'targetUser'}).locationId
-
     generateRecommendation recommendationId, locationId
+    destroyIsotopes ['#presents', '#dinners', '#anythings']
+    loadIsotopes ['#presents', '#dinners', '#anythings']

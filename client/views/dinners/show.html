@@ -1,23 +1,45 @@
 <template name="showDinner">
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+  <div class="recommendation-item col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <img src="{{image}}" alt="{{title}}" class="imagelist">
+    <div class="recommendation-info">
 
-    <div class="recommendation-item">
-      <img src="{{image}}" alt="{{title}}" class="imagelist">
-      <div class="recommendation-info">
+      <h4><img src="{{vendorimage}}" alt="{{vendor}}" class="vendorlist img-circle">
+      <span class="vendor">{{vendor}}</span></h4>
+      <h2 class="recommendation-title">{{title}}</h2>
 
-        <h4><img src="{{vendorimage}}" alt="{{vendor}}" class="vendorlist img-circle">
-        <span class="vendor">{{vendor}}</span></h4>
+      <h3>
+        <span class="price">{{price}}</span>
+        <button type="button" class="add-dinner btn btn-xs btn-add dinnerList">
+          <span class="glyphicon glyphicon-ok"></span> Add
+        </button>
+      </h3>
 
+    </div>
+  </div>
+</template>
 
-        <h2 class="recommendation-title">{{title}}</h2>
-
-        <h3>
-          <span class="price">{{price}}</span>
-          <button type="button" class="btn btn-xs btn-add dinnerList">
-            <span class="glyphicon glyphicon-ok"></span> Add
-          </button>
-        </h3>
-
+<template name="dinnerModal">
+  <div class="modal fade" tabindex="-1" id="{{_id}}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+           <h4 class="modal-title">{{title}}</h4>
+        </div>
+        <div class="modal-body">
+          <img src="{{image}}" alt="{{title}}" class="imagelist">
+          <div class="recommendation-info">
+            <h4><img src="{{vendorimage}}" alt="{{vendor}}" class="vendorlist img-circle">
+            <span class="vendor">{{vendor}}</span></h4>
+            <span class="description">{{description}}</span>
+            <span class="price">{{price}}</span>
+            <span class="location">{{location}}</span>
+            <span class="phonenumber">Tel: {{phonenumber}}</span>
+            <button type="button" class="add-dinner-modal in-modal btn btn-xs btn-add dinnerList">
+              <span class="glyphicon glyphicon-ok"></span> Add
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
