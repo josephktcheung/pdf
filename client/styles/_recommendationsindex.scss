@@ -6,21 +6,18 @@ $red            : #EB5265;
 $lightgray      : #F4F4F4;
 
 .activeuser {
-  h2 {
+  .target-name {
+    margin-left: 10%;
+    margin-top: 15px;
     font-size: 16px;
-    margin: 2%;
     color: $red;
   }
-    .target-name {
-      margin-left: 10%;
-      margin-top: 15px;
-    }
-    .glyphicon-remove {
-      text-shadow: 0 1px 0 #ffffff;
-      margin-top: 17px;
-      margin-right: 5%;
-      opacity: 0.4;
-      float: right;
+  .glyphicon-remove {
+    text-shadow: 0 1px 0 #ffffff;
+    margin-top: 17px;
+    margin-right: 5%;
+    opacity: 0.4;
+    float: right;
 }}
 
 #profile-block {
@@ -46,6 +43,7 @@ $lightgray      : #F4F4F4;
   margin-bottom: 10%;
   width: 100%;
   background-color: white;
+
   .imagelist {
     width: 100%;
     margin-bottom: 2%;
@@ -194,6 +192,73 @@ $lightgray      : #F4F4F4;
       font-weight: 300;
       font-size: 0.8em;
     }
+  }
+}
+
+#presents {
+  line-height: 0;
+  padding-bottom: 10%;
+  overflow: hidden;
+
+   -webkit-column-count: 4;
+   -webkit-column-gap:   10px;
+   -moz-column-count:    4;
+   -moz-column-gap:      10px;
+   column-count:         4;
+   column-gap:           10px;
+}
+
+#presents .imagelist {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (min-width:1025px) {
+  #presents {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (min-width:961px) and (max-width: 1025px) {
+  #presents {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+
+@media (min-width:641px) and (max-width: 961px) {
+  #presents {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  }
+}
+
+@media (min-width:481px) and (max-width: 641px) {
+  #presents {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 18%;
+  }
+}
+@media (min-width:320px) and (max-width: 481px) {
+  #presents {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 20%;
   }
 }
 
