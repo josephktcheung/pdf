@@ -6,21 +6,18 @@ $red            : #EB5265;
 $lightgray      : #F4F4F4;
 
 .activeuser {
-  h2 {
+  .target-name {
+    margin-left: 10%;
+    margin-top: 15px;
     font-size: 16px;
-    margin: 2%;
     color: $red;
   }
-    .target-name {
-      margin-left: 10%;
-      margin-top: 15px;
-    }
-    .glyphicon-remove {
-      text-shadow: 0 1px 0 #ffffff;
-      margin-top: 17px;
-      margin-right: 5%;
-      opacity: 0.4;
-      float: right;
+  .glyphicon-remove {
+    text-shadow: 0 1px 0 #ffffff;
+    margin-top: 17px;
+    margin-right: 5%;
+    opacity: 0.4;
+    float: right;
 }}
 
 #profile-block {
