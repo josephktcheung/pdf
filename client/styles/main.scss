@@ -11,6 +11,9 @@ $bgHighlight    : hsla(353, 79%, 62%, 1);
 $colDefault     : hsla(0, 100%, 100%, 1);
 $colHighlight   : hsla(223, 70%, 4%, 1);
 $red            : hsla(353, 79%, 62%, 1);
+$white          : hsla(0, 100%, 100%, 1);
+$navBlue        : hsla(202, 79%, 52%, 1);
+$yellowGold     : hsla(51, 100%, 50%, 1);
 
 #main {
   padding-right: 8px;
@@ -40,13 +43,6 @@ p {
   color: #FFFFFF;
 }
 
-// .background-image {
-//   background-image: url('https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/cover.jpg');
-//   -moz-filter: blur(5px) brightness(0.5);
-//   -webkit-filter: blur(5px) brightness(0.5);
-//   filter: blur(5px) brightness(0.5);
-// }
-
 #homepage-intro:before {
   content: "";
   background: url('https://s3-ap-southeast-1.amazonaws.com/pdf-giftimage/cover.jpg');
@@ -55,26 +51,25 @@ p {
   height: 500px;
   position: absolute;
   z-index: -1;
+  filter: blur(5px);
+  -moz-filter: blur(5px);
   -webkit-filter: blur(5px);
 }
 
 #homepage-intro {
-  // mauve hsla(276, 100%, 55%, 1)
-  // background: linear-gradient(
-  //   hsla(276, 100%, 70%, 1), hsla(276, 100%, 75%, 1) 90%, $lightgray);
-  background-color: rgba(0,0,0,0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
   padding-bottom: 50px;
   margin-top: -10px;
   margin-bottom: 20px;
   height: inherit;
-  box-shadow: 0px 8px 20px -2px rgba(0,0,0,1);
+  box-shadow: 0px 8px 20px -2px hsla(0, 0%, 0%, 1);
   transform: scale(1);
   display: block;
 }
 
 #homepage-intro h1 {
   text-align: center;
-  color: #FFFFFF;
+  color: $white;
   font-size: 4em;
   font-family: Helvetica;
   border: 1px solid;
@@ -87,7 +82,8 @@ p {
 
 #homepage-intro h2 {
   text-align: center;
-  color: #FFFFF0;
+  // dimmer white
+  color: hsla(60, 100%, 97%, 1);
   font-size: 24px;
   font-family: Helvetica;
   margin-bottom: 30px;
@@ -114,6 +110,7 @@ p {
 }
 
 .navbar-default {
+  // color $navBlue
   background-image: linear-gradient(
     hsla(202, 79%, 52%, 1), hsla(202, 79%, 44%, 1) 60%, hsla(202, 79%, 40%, 1)
   );
@@ -166,7 +163,7 @@ p {
 
 .version {
   text-align: center;
-  color: hsla(51, 100%, 50%, 1);
+  color: $yellowGold;
   margin-bottom: 60px;
 }
 
